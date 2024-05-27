@@ -1,4 +1,11 @@
 ### Hi there 👋
+좋은 코드를 작성하기 위해 끊임없이 노력하는 백엔드 개발자입니다.
+
+현재 Spring을 메인으로 사용하고 있습니다. (Kotlin을 열심히 공부 중이에요)
+추가적으로 Typescript에도 관심이 많아서 이것저것 찍먹해보고 있습니다.
+
+잘 부탁드려요 :)
+
 [![Solved.ac프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=myc228)](https://solved.ac/myc228)
 [![trophy](https://github-profile-trophy.vercel.app/?username=octoping925&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 
