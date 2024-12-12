@@ -11,11 +11,11 @@
 [![trophy](https://github-profile-trophy.vercel.app/?username=octoping925&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 
 <a href="https://github.com/devxb/gitanimals">
-  <img
-    src="https://render.gitanimals.org/lines/Octoping925"
-    width="600"
-    height="120"
-  />
+<img
+  src="https://render.gitanimals.org/farms/Octoping925"
+  width="600"
+  height="300"
+/>
 </a>
   
 
