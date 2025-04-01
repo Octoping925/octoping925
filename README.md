@@ -7,6 +7,7 @@
  
 잘 부탁드려요 :)
 
+[![trophy](https://ryc04otowj.execute-api.ap-northeast-2.amazonaws.com/blog-posts-svg?username=octoping)](https://until.blog/@octoping)
 [![Solved.ac프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=myc228)](https://solved.ac/myc228)
 [![trophy](https://github-profile-trophy.vercel.app/?username=octoping925&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 
@@ -18,7 +19,6 @@
 />
 </a>
 
-[![trophy](https://ryc04otowj.execute-api.ap-northeast-2.amazonaws.com/blog-posts-svg?username=octoping)](https://until.blog/@octoping)
   
 
 <!--
