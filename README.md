@@ -16,7 +16,7 @@
 
 ---
 <div align="left">
-  <img src="blog-widget.svg" alt="Until Blog Post" width="60%">
+  <img src="blog-widget.svg" alt="Until Blog Post">
 </div>
 
 <a href="https://github.com/devxb/gitanimals">
