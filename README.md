@@ -15,7 +15,10 @@
 
 
 ---
-[![until 블로그 최신 글](https://ryc04otowj.execute-api.ap-northeast-2.amazonaws.com/blog-posts-svg?username=octoping)](https://until.blog/@octoping)
+<div align="left">
+  <img src="blog-widget.svg" alt="Until Blog Post" width="60%">
+</div>
+
 <a href="https://github.com/devxb/gitanimals">
 <img
   src="https://render.gitanimals.org/farms/Octoping925"
