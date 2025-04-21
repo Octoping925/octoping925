@@ -8,35 +8,63 @@ jobs:
   blog-widget:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # 현재 레포지토리(octoping925/octoping925)에 쓰기 권한 필요
+
     steps:
-      - uses: actions/checkout@v3
+      # 1. 현재 레포지토리 (octoping925/octoping925) 체크아웃
+      - name: Checkout Main Repo
+        uses: actions/checkout@v3
+        # `repository`를 지정하지 않으면 현재 레포지토리를 체크아웃합니다.
+
+      # 2. 위젯 생성기 레포지토리를 'generator' 서브디렉토리에 체크아웃
+      - name: Checkout Generator Repo
+        uses: actions/checkout@v3
         with:
           repository: untilled/until-github-readme
+          path: generator # 별도 디렉토리에 체크아웃
 
-      - uses: actions/setup-node@v3
+      # 3. Node.js 설정
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      # 4. 생성기 의존성 설치 (generator 디렉토리에서 실행)
+      - name: Install Generator Dependencies
         run: npm ci
+        working-directory: ./generator # 작업 디렉토리 지정
 
-      - name: Build
+      # 5. 생성기 빌드 (generator 디렉토리에서 실행)
+      - name: Build Generator
         run: npm run build
+        working-directory: ./generator # 작업 디렉토리 지정
 
+      # 6. 위젯 생성 (generator 디렉토리에서 실행)
+      # 생성된 파일은 working-directory 내부에 위치함 (./generator/blog-widget.svg)
       - name: Generate Widget
         run: |
           node dist/index.js
+        working-directory: ./generator # 작업 디렉토리 지정
         env:
           INPUT_USERNAME: octoping
           INPUT_MAX_POSTS: 4
           INPUT_THEME: dark
-          INPUT_FILENAME: blog-widget.svg
+          INPUT_FILENAME: blog-widget.svg # 파일 이름은 그대로 유지
 
+      # 7. 생성된 위젯 파일을 메인 레포지토리 루트로 이동
+      - name: Move Widget to Root
+        run: mv ./generator/blog-widget.svg .
+
+      # 8. 위젯을 메인 레포지토리에 커밋 및 푸시
       - name: Commit and Push Widget
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add blog-widget.svg
-          git commit -m "Update blog widget" || echo "No changes to commit"
-          git push
+          # 변경 사항이 있는지 확인하고 커밋
+          if ! git diff --quiet blog-widget.svg; then
+            git add blog-widget.svg
+            git commit -m "Update blog widget [skip ci]" # [skip ci] 추가하여 무한 워크플로우 방지
+            git push
+          else
+            echo "No changes to commit."
+          fi
