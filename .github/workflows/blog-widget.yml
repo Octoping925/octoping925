@@ -55,6 +55,9 @@ jobs:
       - name: Move Widget to Root
         run: mv ./generator/blog-widget.svg .
 
+      - name: Debug
+        run: ls -R .
+
       # 8. 위젯을 메인 레포지토리에 커밋 및 푸시
       - name: Commit and Push Widget
         run: |
