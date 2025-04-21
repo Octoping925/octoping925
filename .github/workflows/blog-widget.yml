@@ -63,12 +63,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-
-          # 변경 사항이 있는지 확인하고 커밋
+          
           git add blog-widget.svg
-          if ! git diff --quiet blog-widget.svg; then
-            git commit -m "Update blog widget [skip ci]" # [skip ci] 추가하여 무한 워크플로우 방지
-            git push
-          else
-            echo "No changes to commit."
-          fi
+          git commit -m "Update blog widget [skip ci]" # [skip ci] 추가하여 무한 워크플로우 방지
+          git push
